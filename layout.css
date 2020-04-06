@@ -1,11 +1,25 @@
 .notepad{
   width:500px;
   height:500px;
-  border:1px solid gray;
+  border:1px solid #3399FF;
   position:relative;
 }
+.note-header{
+  font-size:0.6em;
+  margin:2px 5px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+}
+.note-header p{
+  margin:0;
+  float:left
+}
+.note-header span{
+  float:right; 
+}
 .notepad-menubar {
-  background-color: white;
   left: 0;
   position:absolute;
   right: 0;
@@ -17,6 +31,7 @@
 .notepad-menubar .menu-title {
   margin: 0;
   padding: 0;
+  border-bottom:2px solid #f2f2f2;
 }
 
 .notepad-menubar .title {
@@ -96,11 +111,6 @@
   background-color: #90c8f6;
 }
 
-.line{
-  background-color:#f0f0f0;
-  height:1px;  
-}
-
 .notepad-editor {
   bottom: 0;
   left: 0;
@@ -111,7 +121,7 @@
 
 .notepad-editor textarea {
   auto-size: none;
-  border-top: 1px solid #d2d2d2;
+  border:0; 
   box-sizing: border-box;
   height: 100%;
   outline: none;
@@ -128,8 +138,8 @@
 .notepad-dlg-font .dialogbox {
   height: 498px;
   width: 438px;
-  border:1px solid gray
-}
+  border:1px solid gray;
+  }
 .notepad-dlg-titlebar{
   height:22px;
   font-size:0.8em;
@@ -169,13 +179,13 @@
 .notepad-dlg-font .main .sample {
   border-color: white;
   height: 78px;
-  margin-left: 196px;
+  margin-left: 16px;
   margin-top: 28px;
   width: 194px;
 }
 
 .notepad-dlg-font .main .script {
-  margin-left: 196px;
+  margin-left: 16px;
   margin-top: 12px;
 }
 
@@ -240,4 +250,9 @@
 .notepad-com-list .list .selected {
   background-color: #0078d7;
   color: white;
+}
+
+.list1,.list2,.list3 {
+  display: inline-block;
+  margin:0px 5px;                          
 }
