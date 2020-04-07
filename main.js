@@ -134,6 +134,7 @@ var $dlgnote = (function() {
  
 
     $('.setfont').click(function(){
+        $('.menus').css('display','none');
         $('body').append($settingfont);
         $('.notepad-dlg-font').draggable({handle:$settingfont.find('.notepad-dlg-titlebar')});
 
@@ -163,10 +164,13 @@ var $dlgnote = (function() {
           list: sizes,
           selectHandler: function(e) { console.log(sizes[e]); }
         }); 
+
+       $settingfont.find('.btn-ok').click(destoryDlgFont);
+       $settingfont.find('.btn-cancel').click(destoryDlgFont);
+       $settingfont.find('.close-btn').click(destoryDlgFont);
+
     })
-    $settingfont.find('.btn-ok').click(destoryDlgFont);
-    $settingfont.find('.btn-cancel').click(destoryDlgFont);
-    $settingfont.find('.close-btn').click(destoryDlgFont);
+    
   } 
 
   function destoryDlg() { $dlg.remove();  }
