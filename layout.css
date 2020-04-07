@@ -132,11 +132,17 @@
 }
 
 .notepad-dlg-font {
+  width:438px;
   z-index: 10;
+  position:relative;
+  top:-450px;
+  left:30px;
+  background-color:white;
+
 }
 
 .notepad-dlg-font .dialogbox {
-  height: 498px;
+  height: 494px;
   width: 438px;
   border:1px solid gray;
   }

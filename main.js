@@ -95,9 +95,8 @@ var $dlgnote = (function() {
 
   function show() {
     $('body').append($dlg);
-    $('.notepad').draggable();
-
-
+    $('.notepad').draggable({handle:$dlg.find('.note-header')});
+    
     $('.title1').click(function(){
       $('.menus1').css('display','inline-block');
       $('.menus').css('left','0');
@@ -136,7 +135,8 @@ var $dlgnote = (function() {
 
     $('.setfont').click(function(){
         $('body').append($settingfont);
-        
+        $('.notepad-dlg-font').draggable({handle:$settingfont.find('.notepad-dlg-titlebar')});
+
         var l1 = new comList();   
         l1.show({
           container: '.list1',
@@ -164,8 +164,9 @@ var $dlgnote = (function() {
           selectHandler: function(e) { console.log(sizes[e]); }
         }); 
     })
-
- 
+    $settingfont.find('.btn-ok').click(destoryDlgFont);
+    $settingfont.find('.btn-cancel').click(destoryDlgFont);
+    $settingfont.find('.close-btn').click(destoryDlgFont);
   } 
 
   function destoryDlg() { $dlg.remove();  }
