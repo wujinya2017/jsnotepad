@@ -1,3 +1,4 @@
+/*global $*/
 var $dlgnote = (function() {
   var $dlg = $(''
       +'<div class="notepad">' 
@@ -89,9 +90,9 @@ var $dlgnote = (function() {
       +'</div>'
    +'</div>');
 
-    var fonts = ['Agency FB', 'Algerian', 'Arial', 'Arial Rounded MT', 'Axure Handwriting', 'Bahnschrift', 'Baskerville Old Face', 'Bauhaus 93', 'Bell MT', 'Berlin Sans FB', 'Bernard MT', 'BlackAdder ITC'],
-        styles = ['常规', '斜体', '粗体', '粗偏斜体'],
-        sizes = ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36', '48', '72'];
+  var fonts = ['Agency FB', 'Algerian', 'Arial', 'Arial Rounded MT', 'Axure Handwriting', 'Bahnschrift', 'Baskerville Old Face', 'Bauhaus 93', 'Bell MT', 'Berlin Sans FB', 'Bernard MT', 'BlackAdder ITC'],
+      styles = ['常规', '斜体', '粗体', '粗偏斜体'],
+      sizes = ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36', '48', '72'];
 
   function show() {
     $('body').append($dlg);
@@ -101,75 +102,75 @@ var $dlgnote = (function() {
       $('.menus1').css('display','inline-block');
       $('.menus').css('left','0');
       $('.menus1').siblings('.menus').css('display', 'none');  
-    })
+    });
     $('.title2').click(function(){
       $('.menus2').css('display','inline-block');
       $('.menus').css('left','54px');
       $('.menus2').siblings('.menus').css('display', 'none');  
-    })
+    });
     $('.title3').click(function(){
       $('.menus3').css('display','inline-block');
       $('.menus').css('left','108px');
       $('.menus').css('width','150px');
       $('.menus3').siblings('.menus').css('display', 'none');  
-    })
+    });
     $('.title4').click(function(){
       $('.menus4').css('display','inline-block');
       $('.menus').css('left','162px');
       $('.menus').css('width','150px');
       $('.menus4').siblings('.menus').css('display', 'none');  
-    })
+    });
     $('.title5').click(function(){
       $('.menus5').css('display','inline-block');
       $('.menus').css('left','216px');
       $('.menus').css('width','150px');
       $('.menus5').siblings('.menus').css('display', 'none');  
-    })
+    });
    
     $('.notepad-menubar').siblings().click(function(){
       $('.menus').css('display','none');
-    })
+    });
 
-    $('.note-header span').click(destoryDlg)
+    $('.note-header span').click(destoryDlg);
  
 
     $('.setfont').click(function(){
-        $('.menus').css('display','none');
-        $('body').append($settingfont);
-        $('.notepad-dlg-font').draggable({handle:$settingfont.find('.notepad-dlg-titlebar')});
+      $('.menus').css('display','none');
+      $('body').append($settingfont);
+      $('.notepad-dlg-font').draggable({handle:$settingfont.find('.notepad-dlg-titlebar')});
 
-        var l1 = new comList();   
-        l1.show({
-          container: '.list1',
-          width: '176px',
-          list: fonts,
-          isFont: true,
-          selectHandler: function(e) { console.log(fonts[e]); }
-        });
+      var l1 = new comList();   
+      l1.show({
+        container: '.list1',
+        width: '176px',
+        list: fonts,
+        isFont: true,
+        selectHandler: function(e) { window.console.log(fonts[e]); }
+      });
 
-        var l2 = new comList();
-        l2.show({
-          container: '.list2',
-          select: 3,
-          width: '132px',
-          list: styles,
-          isFontStyle: true,
-          selectHandler: function(e) { console.log(styles[e]); }
-        });
+      var l2 = new comList();
+      l2.show({
+        container: '.list2',
+        select: 3,
+        width: '132px',
+        list: styles,
+        isFontStyle: true,
+        selectHandler: function(e) {window.console.log(styles[e]); }
+      });
 
-        var l3 = new comList();
-        l3.show({
-          container: '.list3',
-          width: '64px',
-          list: sizes,
-          selectHandler: function(e) { console.log(sizes[e]); }
-        }); 
+      var l3 = new comList();
+      l3.show({
+        container: '.list3',
+        width: '64px',
+        list: sizes,
+        selectHandler: function(e) {window.console.log(sizes[e]); }
+      }); 
 
-       $settingfont.find('.btn-ok').click(destoryDlgFont);
-       $settingfont.find('.btn-cancel').click(destoryDlgFont);
-       $settingfont.find('.close-btn').click(destoryDlgFont);
+      $settingfont.find('.btn-ok').click(destoryDlgFont);
+      $settingfont.find('.btn-cancel').click(destoryDlgFont);
+      $settingfont.find('.close-btn').click(destoryDlgFont);
 
-    })
+    });
     
   } 
 
